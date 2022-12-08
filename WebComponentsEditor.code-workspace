@@ -120,8 +120,7 @@
       "antfu.iconify",
       "antfu.unocss",
       "dbaeumer.vscode-eslint",
-      "csstools.postcss",
-      "lokalise.i18n-ally"
+      "csstools.postcss"
     ],
     "unwantedRecommendations": [
       "octref.vetur"
