@@ -1,4 +1,4 @@
-import { resolve } from 'path';
+import { resolve } from 'node:path';
 import { type PluginOption, normalizePath } from 'vite';
 
 /**

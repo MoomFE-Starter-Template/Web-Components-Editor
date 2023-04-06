@@ -1,4 +1,4 @@
-import { resolve } from 'path';
+import { resolve } from 'node:path';
 import fs from 'fs-extra';
 import { dirname } from '@moomfe/small-utils/node-utils';
 import { camelCase, escapeRegExp } from 'lodash-es';

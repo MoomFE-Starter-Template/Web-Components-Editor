@@ -20,9 +20,9 @@
   const { theme, themeOverrides, zhCN, dateZhCN } = useNaiveTheme();
 
   /** 获取当前应用的一些环境变量 */
-  const GetAppEnv = () => {
+  function GetAppEnv() {
     app.loadingBar = useLoadingBar();
-  };
+  }
 
   useTitle(settings.title);
 </script>
