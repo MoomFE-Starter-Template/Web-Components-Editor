@@ -13,8 +13,8 @@
   },
   "dependencies": {
     "@moomfe/small-utils": "^5.3.1",
-    "@vueuse/core": "^9.13.0",
-    "@vueuse/math": "^9.13.0",
+    "@vueuse/core": "^10.0.2",
+    "@vueuse/math": "^10.0.2",
     "lodash-es": "^4.17.21",
     "naive-ui": "^2.34.3",
     "pinia": "^2.0.34",
@@ -22,7 +22,7 @@
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
-    "@iconify/json": "^2.2.48",
+    "@iconify/json": "^2.2.50",
     "@moomfe/eslint-config": "^2.4.0",
     "@rollup/pluginutils": "^5.0.2",
     "@types/fs-extra": "^11.0.1",
@@ -39,17 +39,17 @@
     "magic-string": "^0.30.0",
     "pnpm": "^8.2.0",
     "prompts": "^2.4.2",
-    "sass": "^1.61.0",
+    "sass": "^1.62.0",
     "tsx": "^3.12.6",
     "typescript": "^5.0.4",
     "unocss": "^0.51.4",
     "unocss-preset-extra": "^0.5.2",
     "unocss-preset-scrollbar": "^0.2.1",
-    "unplugin-auto-import": "^0.15.2",
+    "unplugin-auto-import": "^0.15.3",
     "unplugin-icons": "^0.16.1",
     "unplugin-vue-components": "^0.24.1",
     "vite": "^4.2.1",
-    "vite-plugin-inspect": "^0.7.20",
+    "vite-plugin-inspect": "^0.7.22",
     "vite-plugin-pages": "^0.29.0",
     "vite-plugin-vue-layouts": "^0.8.0"
   }
