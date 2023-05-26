@@ -1,22 +1,40 @@
 <template>
   <div class="size-screen p-3" un:grid="~ rows-[auto_1fr] gap-3">
     <!-- 操作区 -->
-    <div class="flex items-center gap-2">
-      <n-select
-        v-model:value="componentsSelectValue"
-        class="!w-72"
-        :options="componentsOptions" :render-label="renderOptionLabel" :consistent-menu-width="false"
-        placeholder="请选择组件" clearable
-      />
-      <n-button type="primary" :disabled="!componentsSelectValue" @click="createTab(componentsSelectValue)">
-        新增
-      </n-button>
-      <template v-if="componentsSelectValue">
-        <router-link class="no-underline!" :to="{ name: 'Frame/Component', params: { name: componentsSelectValue } }" target="_blank">
-          <n-button type="primary">新窗口打开</n-button>
-        </router-link>
-      </template>
-    </div>
+    <n-space justify="space-between" item-style="position: relative">
+      <!-- 左侧组件相关功能 -->
+      <n-space>
+        <n-select
+          v-model:value="componentsSelectValue"
+          class="!w-72"
+          :options="componentsOptions" :render-label="renderOptionLabel" :consistent-menu-width="false"
+          placeholder="请选择组件" clearable
+        />
+        <n-button type="primary" :disabled="!componentsSelectValue" @click="createTab(componentsSelectValue)">新增</n-button>
+        <template v-if="componentsSelectValue">
+          <router-link class="no-underline!" :to="{ name: 'Frame/Component', params: { name: componentsSelectValue } }" target="_blank">
+            <n-button type="primary">新窗口打开</n-button>
+          </router-link>
+        </template>
+      </n-space>
+      <!-- 右侧项目相关信息 -->
+      <n-space class="absolute -top-1 -right-1 <xs:hidden!" :wrap="false">
+        <Logo />
+        <div class="h-full flex-(~ col items-center justify-around) [&>*]-(text-lg op-60 transition-all duration-300) [&>*:hover]-(text-primary op-100)">
+          <!-- 切换深色模式 -->
+          <button title="切换暗色模式" @click="theme.toggleDark()">
+            <i-ph-moon v-if="theme.dark" />
+            <i-ic-outline-wb-sunny v-else />
+          </button>
+          <!-- 跳转到 Github -->
+          <button>
+            <a class="c-inherit!" href="https://github.com/MoomFE-Starter-Template/Web-Components-Editor" target="_blank" rel="noopener noreferrer">
+              <i-mdi-github />
+            </a>
+          </button>
+        </div>
+      </n-space>
+    </n-space>
 
     <!-- 组件展示区 -->
     <div ref="tabsWrapRef" class="size-full overflow-hidden">
@@ -58,6 +76,8 @@
   import { useTabsManage } from './composables/useTabsManage';
   import { genTabDataOptions, renderOptionLabel, renderTabTitle, useTabPaneHeight } from './utils';
   import { componentsOptions } from '@/shared/components';
+
+  const theme = useThemeStore();
 
   /** 选项卡容器 */
   const tabsWrapRef = ref<HTMLElement>();
