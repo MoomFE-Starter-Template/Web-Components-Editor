@@ -52,7 +52,11 @@ export function createViteBaseConfig(options: CreateViteBaseConfigOptions = {}) 
       // 原子化 CSS 引擎 ( 供 Web Components 使用 )
       Unocss({
         mode: 'vue-scoped',
-        include: [isCustomElementRE],
+        content: {
+          pipeline: {
+            include: [isCustomElementRE],
+          },
+        },
       }),
       // 移除 Web Components 组件的样式作用域标识
       RemoveStyleScoped(),
