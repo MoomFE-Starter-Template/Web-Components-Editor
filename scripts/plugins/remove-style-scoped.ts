@@ -1,7 +1,7 @@
 import { createFilter } from '@rollup/pluginutils';
 import { type PluginOption } from 'vite';
 
-export const isCustomElementRE = /\/web-components\/.*\/.*\.vue($|\?)/;
+export const isCustomElementRE = /\/web-components\/.*\/.*\.vue$/;
 
 /**
  * 移除 Web Components 组件的样式作用域标识
