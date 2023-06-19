@@ -97,6 +97,7 @@ export function createViteBaseConfig(options: CreateViteBaseConfigOptions = {}) 
         ],
         eslintrc: {
           enabled: true,
+          filepath: path.resolve(__dirname, './.eslintrc-auto-import.json'),
         },
       }),
     ],
