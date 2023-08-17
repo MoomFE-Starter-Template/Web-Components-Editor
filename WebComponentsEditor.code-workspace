@@ -120,10 +120,11 @@
     "recommendations": [
       "vue.volar",
       "vue.vscode-typescript-vue-plugin",
+      "dbaeumer.vscode-eslint",
       "antfu.iconify",
       "antfu.unocss",
-      "dbaeumer.vscode-eslint",
-      "csstools.postcss"
+      "csstools.postcss",
+      "syler.sass-indented"
     ],
     "unwantedRecommendations": [
       "octref.vetur"
