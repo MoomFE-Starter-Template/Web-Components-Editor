@@ -1,4 +1,5 @@
 import path from 'node:path';
+import process from 'node:process';
 import type { UserConfig } from 'vite';
 import { defineConfig, loadEnv } from 'vite';
 import Vue from '@vitejs/plugin-vue';
@@ -14,6 +15,7 @@ import Layouts from 'vite-plugin-vue-layouts';
 import Inspect from 'vite-plugin-inspect';
 import { deepMerge } from '@moomfe/small-utils';
 import { SmallUtilsComponentsResolver } from '@moomfe/small-utils/vite-config';
+import { MixteUseAutoImport } from '@mixte/use/dist/register';
 import { dirname } from '@moomfe/small-utils/node-utils';
 import VirtualPublic from './scripts/plugins/virtual-public';
 import RemoveStyleScoped, { isCustomElementRE } from './scripts/plugins/remove-style-scoped';
@@ -90,6 +92,7 @@ export function createViteBaseConfig(options: CreateViteBaseConfigOptions = {}) 
           'vue-router',
           '@vueuse/core',
           '@vueuse/math',
+          MixteUseAutoImport({ useWithVueUseCore: true }),
         ],
         dirs: [
           path.resolve(__dirname, './src/composables'),
