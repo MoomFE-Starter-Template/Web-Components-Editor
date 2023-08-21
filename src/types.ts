@@ -16,5 +16,5 @@ export type UserModule = (ctx: UserModuleContext) => void;
  */
 export interface Settings {
   /** 项目名称 */
-  title: string
+  name: string
 }
