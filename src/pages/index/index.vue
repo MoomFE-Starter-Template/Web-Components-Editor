@@ -22,8 +22,9 @@
         <Logo />
         <div class="h-full flex-(~ col items-center justify-around) [&>*]-(text-lg op-60 transition-all duration-300) [&>*:hover]-(text-primary op-100)">
           <!-- 切换深色模式 -->
-          <button title="切换暗色模式" @click="theme.toggleDark()">
-            <i-ph-moon v-if="theme.dark" />
+          <button title="切换暗色模式" @click="theme.toggle()">
+            <i-mdi-theme-light-dark v-if="theme.value === 'auto'" />
+            <i-ph-moon v-else-if="theme.value === 'dark'" />
             <i-ic-outline-wb-sunny v-else />
           </button>
           <!-- 跳转到 Github -->
