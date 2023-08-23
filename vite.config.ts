@@ -15,7 +15,7 @@ import Layouts from 'vite-plugin-vue-layouts';
 import Inspect from 'vite-plugin-inspect';
 import { deepMerge } from '@moomfe/small-utils';
 import { SmallUtilsComponentsResolver } from '@moomfe/small-utils/vite-config';
-import { MixteUseAutoImport } from '@mixte/use/dist/register';
+import { MixteUseAutoImport } from '@mixte/use/register';
 import { dirname } from '@moomfe/small-utils/node-utils';
 import VirtualPublic from './scripts/plugins/virtual-public';
 import RemoveStyleScoped, { isCustomElementRE } from './scripts/plugins/remove-style-scoped';
