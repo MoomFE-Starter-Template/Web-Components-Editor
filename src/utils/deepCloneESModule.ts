@@ -1,4 +1,4 @@
-import { deepClone } from '@moomfe/small-utils';
+import { deepClone } from 'mixte';
 
 /**
  * 深拷贝 ES Module

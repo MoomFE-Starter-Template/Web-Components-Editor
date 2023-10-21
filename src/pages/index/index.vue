@@ -73,7 +73,7 @@
 </template>
 
 <script lang="ts" setup>
-  import { isFunction } from '@moomfe/small-utils';
+  import { isFunction } from 'mixte';
   import { useTabsManage } from './composables/useTabsManage';
   import { genTabDataOptions, renderOptionLabel, renderTabTitle, useTabPaneHeight } from './utils';
   import { componentsOptions } from '@/shared/components';

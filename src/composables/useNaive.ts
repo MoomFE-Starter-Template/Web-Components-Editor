@@ -1,4 +1,4 @@
-import { uniqueKeyCustomizer } from '@moomfe/small-utils';
+import { uniqueKeyCustomizer } from 'mixte';
 
 /**
  * 使 web components 中可以使用 Naive UI 的组件

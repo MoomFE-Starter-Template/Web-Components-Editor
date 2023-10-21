@@ -1,5 +1,5 @@
-import { uniqueKey } from '@moomfe/small-utils';
-import { type Tab } from '../type';
+import { uniqueKey } from 'mixte';
+import type { Tab } from '../type';
 import { components } from '@/shared/components';
 
 /** 选项卡管理 */

@@ -13,7 +13,7 @@ import AutoImport from 'unplugin-auto-import/vite';
 import Pages from 'vite-plugin-pages';
 import Layouts from 'vite-plugin-vue-layouts';
 import Inspect from 'vite-plugin-inspect';
-import { deepMerge } from '@moomfe/small-utils';
+import { deepMerge } from 'mixte';
 import { SmallUtilsComponentsResolver } from '@moomfe/small-utils/vite-config';
 import { MixteUseAutoImport } from '@mixte/use/register';
 import { dirname } from '@moomfe/small-utils/node-utils';

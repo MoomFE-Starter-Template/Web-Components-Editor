@@ -1,5 +1,7 @@
+import process from 'node:process';
 import { resolve } from 'node:path';
-import { type PluginOption, normalizePath } from 'vite';
+import { normalizePath } from 'vite';
+import type { PluginOption } from 'vite';
 
 /**
  * 对 Web Components 组件使用的 public 资源进行虚拟路径替换

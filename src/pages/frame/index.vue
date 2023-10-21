@@ -9,8 +9,8 @@
 </template>
 
 <script lang="ts" setup>
-  import { isFunction } from '@moomfe/small-utils';
-  import { type Tab } from '../index/type';
+  import { isFunction } from 'mixte';
+  import type { Tab } from '../index/type';
   import { components } from '@/shared/components';
 
   interface Props {
