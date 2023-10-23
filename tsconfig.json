@@ -23,7 +23,8 @@
       "unplugin-icons/types/vue",
       "vite-plugin-pages/client",
       "vite-plugin-vue-layouts/client",
-      "naive-ui/volar"
+      "naive-ui/volar",
+      "element-plus/global"
     ],
     "paths": {
       "~/*": ["./src/*"],

@@ -1,12 +1,12 @@
 import { NConfigProvider, NNotificationProvider } from 'naive-ui';
-import tailwindReset from '@unocss/reset/tailwind.css?inline';
+import tailwindResetStyle from '@unocss/reset/tailwind.css?inline';
 import VueComponent from './index.vue';
 import { tag } from './info';
 import { defineCustomElements } from '@/utils/defineCustomElements';
 
 defineCustomElements(tag, defineComponent({
   styles: [
-    tailwindReset,
+    tailwindResetStyle,
     ...new Set([...VueComponent.styles]),
   ],
   setup() {

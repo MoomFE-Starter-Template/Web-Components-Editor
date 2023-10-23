@@ -8,10 +8,17 @@ import { camelCase } from 'lodash-es';
 import { createViteBaseConfig } from '../vite.config';
 
 // Get components info start
+import * as elementuiDemoInfo from '@/web-components/elementui-demo/info';
 import * as memoryInfoInfo from '@/web-components/memory-info/info';
 import * as naiveuiDemoInfo from '@/web-components/naiveui-demo/info';
 
 const componentsInfo: Record<string, { name: string; info: { name: string; tag: string }; indexPath: string; viteConfigPath?: string }> = {
+  elementuiDemo: {
+    name: 'elementui-demo',
+    info: elementuiDemoInfo,
+    indexPath: 'web-components/elementui-demo/index.tsx',
+    viteConfigPath: undefined,
+  },
   memoryInfo: {
     name: 'memory-info',
     info: memoryInfoInfo,

@@ -8,7 +8,7 @@ import Unocss from 'unocss/vite';
 import Icons from 'unplugin-icons/vite';
 import IconsResolver from 'unplugin-icons/resolver';
 import Components from 'unplugin-vue-components/vite';
-import { NaiveUiResolver } from 'unplugin-vue-components/resolvers';
+import { ElementPlusResolver, NaiveUiResolver } from 'unplugin-vue-components/resolvers';
 import AutoImport from 'unplugin-auto-import/vite';
 import Pages from 'vite-plugin-pages';
 import Layouts from 'vite-plugin-vue-layouts';
@@ -81,6 +81,8 @@ export function createViteBaseConfig(options: CreateViteBaseConfigOptions = {}) 
           SmallUtilsComponentsResolver(),
           // 自动导入 Naive UI 组件
           NaiveUiResolver(),
+          // 自动导入 Element Plus 组件
+          ElementPlusResolver(),
         ],
       }),
       // API 自动加载
@@ -94,6 +96,9 @@ export function createViteBaseConfig(options: CreateViteBaseConfigOptions = {}) 
           '@vueuse/math',
           MixteUseAutoImport({ useWithVueUseCore: true }),
         ],
+        resolvers: [
+          ElementPlusResolver(),
+        ],
         dirs: [
           path.resolve(__dirname, './src/composables'),
           path.resolve(__dirname, './src/stores'),
@@ -104,6 +109,13 @@ export function createViteBaseConfig(options: CreateViteBaseConfigOptions = {}) 
         },
       }),
     ],
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "~/styles/element.scss" as *;',
+        },
+      },
+    },
   });
 }
 
