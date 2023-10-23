@@ -1,5 +1,5 @@
 <template>
-  <div root p-2>
+  <div class="root p2">
     <el-tooltip content="提示">
       <el-button>鼠标移上显示提示</el-button>
     </el-tooltip>

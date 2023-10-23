@@ -1,5 +1,5 @@
 <template>
-  <div root p-2>
+  <div class="root p2">
     <NSpace>
       <NTooltip>
         <template #trigger>

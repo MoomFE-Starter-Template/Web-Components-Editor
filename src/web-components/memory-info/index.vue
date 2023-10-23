@@ -1,18 +1,18 @@
 <template>
-  <template v-if="isSupported && memory">
-    <div class="root flex justify-center">
-      <div un:text="left sm" un:grid="~ cols-[auto_1fr] gap-(x-3 y-1)">
-        <div un:text="gray">Used:</div>
+  <div class="root flex justify-center">
+    <template v-if="isSupported && memory">
+      <div text="left sm" grid="~ cols-[auto_1fr] gap-(x-3 y-1)">
+        <div text-gray>Used:</div>
         <div>{{ size(memory.usedJSHeapSize) }}</div>
-        <div un:text="gray">Allocated:</div>
+        <div text-gray>Allocated:</div>
         <div>{{ size(memory.totalJSHeapSize) }}</div>
-        <div un:text="gray">Limit:</div>
+        <div text-gray>Limit:</div>
         <div>{{ size(memory.jsHeapSizeLimit) }}</div>
       </div>
-    </div>
-  </template>
-  <div v-else>
-    Your browser does not support performance memory API
+    </template>
+    <template v-else>
+      Your browser does not support performance memory API
+    </template>
   </div>
 </template>
 
