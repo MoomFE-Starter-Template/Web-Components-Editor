@@ -2,6 +2,7 @@ import { uniqueKeyCustomizer } from 'mixte';
 
 /**
  * 使 web components 中可以使用 Naive UI 的组件
+ * @param classPrefix 自定义组件的类的前缀, 默认为随机字符串
  * @example
  *
  * // js
@@ -12,9 +13,8 @@ import { uniqueKeyCustomizer } from 'mixte';
  *   <n-select />
  * </n-config-provider>
  */
-export function useNaive() {
+export function useNaive(classPrefix = uniqueKeyCustomizer()) {
   const el = useCurrentElement();
-  const classPrefix = uniqueKeyCustomizer();
   const selectors = `style[cssr-id^="${classPrefix}-"]`;
 
   onMounted(() => {

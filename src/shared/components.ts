@@ -22,7 +22,7 @@ type Components = Record<string, {
 }>;
 
 /** 所有组件注册文件引用 */
-const componentsIndex: Record<string, ComponentsIndex> = formatComponentsGlob(import.meta.glob('@/web-components/*/index.ts'));
+const componentsIndex: Record<string, ComponentsIndex> = formatComponentsGlob(import.meta.glob('@/web-components/*/index.(ts|tsx)'));
 /** 所有组件信息文件 */
 const componentsInfo: Record<string, ComponentsInfo> = formatComponentsGlob(import.meta.glob('@/web-components/*/info.ts', { eager: true }));
 /** 所有组件的测试数据 */

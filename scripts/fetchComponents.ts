@@ -13,7 +13,7 @@ const srcPath = resolve(rootPath, 'src');
 const buildFilePath = resolve(__dirname, 'build.ts');
 
 /** 组件注册文件引用 */
-const componentsIndex = formatComponentsGlob(fg.sync(['web-components/*/index.ts'], { cwd: srcPath }));
+const componentsIndex = formatComponentsGlob(fg.sync(['web-components/*/index.(ts|tsx)'], { cwd: srcPath }));
 /** 组件信息文件 */
 const componentsInfo = formatComponentsGlob(fg.sync(['web-components/*/info.ts'], { cwd: srcPath }));
 /** 组件的额外的 Vite 配置 */

@@ -53,7 +53,9 @@ export default defineConfig({
   },
   presets: [
     // 默认预设, 和 Tailwind 类似
-    presetUno(),
+    presetUno({
+      preflight: false,
+    }),
     // 属性模式
     presetAttributify({
       prefix: 'un:',

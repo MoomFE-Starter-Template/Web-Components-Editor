@@ -4,7 +4,7 @@ import { deepMerge } from 'mixte';
 import { colors, fontFamily } from '@/shared/unocss.theme';
 
 /** 通用主题变量覆盖 */
-const commonOverrides: GlobalThemeOverrides = {
+export const commonOverrides: GlobalThemeOverrides = {
   common: {
     // 默认字体
     fontFamily: fontFamily.sans,
@@ -40,11 +40,11 @@ const commonOverrides: GlobalThemeOverrides = {
 };
 
 /** 亮色主题变量覆盖 */
-const lightThemeOverrides: GlobalThemeOverrides = deepMerge({}, commonOverrides, {
+export const lightThemeOverrides: GlobalThemeOverrides = deepMerge({}, commonOverrides, {
 
 });
 /** 深色主题变量覆盖 */
-const darkThemeOverrides: GlobalThemeOverrides = deepMerge({}, commonOverrides, {
+export const darkThemeOverrides: GlobalThemeOverrides = deepMerge({}, commonOverrides, {
   Button: {
     textColorPrimary: '#FFF',
     textColorHoverPrimary: '#FFF',
