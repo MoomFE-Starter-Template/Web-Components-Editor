@@ -8,6 +8,7 @@ import Unocss from 'unocss/vite';
 import Icons from 'unplugin-icons/vite';
 import IconsResolver from 'unplugin-icons/resolver';
 import Components from 'unplugin-vue-components/vite';
+import { viteVueCESubStyle } from '@unplugin-vue-ce/sub-style';
 import { ElementPlusResolver, NaiveUiResolver } from 'unplugin-vue-components/resolvers';
 import AutoImport from 'unplugin-auto-import/vite';
 import Pages from 'vite-plugin-pages';
@@ -49,6 +50,8 @@ export function createViteBaseConfig(options: CreateViteBaseConfigOptions = {}) 
       Vue({
         customElement: [isCustomElementRE],
       }),
+      // 子组件样式支持
+      viteVueCESubStyle(),
       // JSX 支持
       VueJsx(),
       // 原子化 CSS 引擎 ( 供 Web Components 使用 )

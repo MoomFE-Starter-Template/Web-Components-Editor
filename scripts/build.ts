@@ -16,7 +16,7 @@ const componentsInfo: Record<string, { name: string; info: { name: string; tag: 
   elementuiDemo: {
     name: 'elementui-demo',
     info: elementuiDemoInfo,
-    indexPath: 'web-components/elementui-demo/index.tsx',
+    indexPath: 'web-components/elementui-demo/index.ts',
     viteConfigPath: undefined,
   },
   memoryInfo: {
@@ -28,7 +28,7 @@ const componentsInfo: Record<string, { name: string; info: { name: string; tag: 
   naiveuiDemo: {
     name: 'naiveui-demo',
     info: naiveuiDemoInfo,
-    indexPath: 'web-components/naiveui-demo/index.tsx',
+    indexPath: 'web-components/naiveui-demo/index.ts',
     viteConfigPath: undefined,
   },
 };
