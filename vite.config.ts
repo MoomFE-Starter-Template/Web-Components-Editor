@@ -19,7 +19,6 @@ import { SmallUtilsComponentsResolver } from '@moomfe/small-utils/vite-config';
 import { MixteUseAutoImport } from '@mixte/use/register';
 import { dirname } from '@moomfe/small-utils/node-utils';
 import VirtualPublic from './scripts/plugins/virtual-public';
-import RemoveStyleScoped, { isCustomElementRE } from './scripts/plugins/remove-style-scoped';
 
 const __dirname = dirname(import.meta);
 
@@ -29,6 +28,7 @@ const __dirname = dirname(import.meta);
  */
 export function createViteBaseConfig(options: CreateViteBaseConfigOptions = {}) {
   const plugins = options.plugins || [];
+  const isCustomElementRE = /\/web-components\/.*\/.*\.vue$/;
 
   return defineConfig({
     // 环境变量前缀
@@ -63,8 +63,6 @@ export function createViteBaseConfig(options: CreateViteBaseConfigOptions = {}) 
           },
         },
       }),
-      // 移除 Web Components 组件的样式作用域标识
-      RemoveStyleScoped(),
       // 将图标作为图标组件可进行导入
       Icons({
         scale: 1,
