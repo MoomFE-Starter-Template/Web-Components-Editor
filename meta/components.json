@@ -1,0 +1,19 @@
+{
+  "components": [
+    {
+      "path": "elementui-demo",
+      "name": "st-elementui-demo",
+      "displayName": "Element Plus UI 组件示例"
+    },
+    {
+      "path": "memory-info",
+      "name": "st-memory-info",
+      "displayName": "内存信息"
+    },
+    {
+      "path": "naiveui-demo",
+      "name": "st-naiveui-demo",
+      "displayName": "Naive UI 组件示例"
+    }
+  ]
+}

@@ -6,7 +6,8 @@
   "homepage": "https://github.com/MoomFE-Starter-Template/Web-Components-Editor",
   "scripts": {
     "dev": "pnpm install && vite --host",
-    "build": "tsx scripts/fetchComponents.ts && tsx scripts/build.ts",
+    "ucd": "pnpm install && tsx scripts/updateComponentsDetails.ts",
+    "build": "pnpm ucd && tsx scripts/build.ts",
     "build:editor": "pnpm install && vite build",
     "preview": "pnpm install && vite build && vite preview --host",
     "lint": "eslint . --fix",
