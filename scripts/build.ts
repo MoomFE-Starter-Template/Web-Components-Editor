@@ -1,16 +1,16 @@
-import { resolve } from 'node:path';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import fs from 'fs-extra';
 import prompts from 'prompts';
 import chalk from 'chalk';
 import { type InlineConfig, build, mergeConfig } from 'vite';
-import { dirname } from '@moomfe/small-utils/node-utils';
 import { camelCase } from 'lodash-es';
 import { asyncForEach } from 'mixte';
 import { createViteBaseConfig } from '../vite.config';
 import { components } from '../meta/components.json';
 import type { componentDetail } from './updateComponentsDetails';
 
-const __dirname = dirname(import.meta);
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const rootPath = resolve(__dirname, '../');
 const srcPath = resolve(rootPath, 'src');

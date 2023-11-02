@@ -1,4 +1,5 @@
-import path from 'node:path';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import process from 'node:process';
 import type { UserConfig } from 'vite';
 import { defineConfig, loadEnv } from 'vite';
@@ -15,12 +16,10 @@ import Pages from 'vite-plugin-pages';
 import Layouts from 'vite-plugin-vue-layouts';
 import Inspect from 'vite-plugin-inspect';
 import { deepMerge } from 'mixte';
-import { SmallUtilsComponentsResolver } from '@moomfe/small-utils/vite-config';
 import { MixteUseAutoImport } from '@mixte/use/register';
-import { dirname } from '@moomfe/small-utils/node-utils';
 import VirtualPublic from './scripts/plugins/virtual-public';
 
-const __dirname = dirname(import.meta);
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 /**
  * 创建一个基础的 vite 配置
@@ -36,9 +35,9 @@ export function createViteBaseConfig(options: CreateViteBaseConfigOptions = {}) 
     // 路径别名
     resolve: {
       alias: {
-        '~': path.resolve(__dirname, './src'),
-        '@': path.resolve(__dirname, './src'),
-        '@@': path.resolve(__dirname, './'),
+        '~': resolve(__dirname, './src'),
+        '@': resolve(__dirname, './src'),
+        '@@': resolve(__dirname, './'),
       },
     },
     // 插件
@@ -70,16 +69,14 @@ export function createViteBaseConfig(options: CreateViteBaseConfigOptions = {}) 
       }),
       // 自动导入使用到的组件
       Components({
-        dts: path.resolve(__dirname, './types/components.d.ts'),
+        dts: resolve(__dirname, './types/components.d.ts'),
         dirs: [
-          path.resolve(__dirname, './src/components'),
-          path.resolve(__dirname, './src/components-private'),
+          resolve(__dirname, './src/components'),
+          resolve(__dirname, './src/components-private'),
         ],
         resolvers: [
           // 自动导入图标组件
           IconsResolver({ prefix: 'i' }),
-          // 自动导入 @moomfe/small-utils 的组件
-          SmallUtilsComponentsResolver(),
           // 自动导入 Naive UI 组件
           NaiveUiResolver(),
           // 自动导入 Element Plus 组件
@@ -88,7 +85,7 @@ export function createViteBaseConfig(options: CreateViteBaseConfigOptions = {}) 
       }),
       // API 自动加载
       AutoImport({
-        dts: path.resolve(__dirname, './types/auto-imports.d.ts'),
+        dts: resolve(__dirname, './types/auto-imports.d.ts'),
         vueTemplate: true,
         imports: [
           'vue',
@@ -101,12 +98,12 @@ export function createViteBaseConfig(options: CreateViteBaseConfigOptions = {}) 
           ElementPlusResolver(),
         ],
         dirs: [
-          path.resolve(__dirname, './src/composables'),
-          path.resolve(__dirname, './src/stores'),
+          resolve(__dirname, './src/composables'),
+          resolve(__dirname, './src/stores'),
         ],
         eslintrc: {
           enabled: true,
-          filepath: path.resolve(__dirname, './.eslintrc-auto-import.json'),
+          filepath: resolve(__dirname, './.eslintrc-auto-import.json'),
         },
       }),
     ],
@@ -133,7 +130,7 @@ export default defineConfig(({ mode }) => {
       plugins: [
         // 以文件系统为基础的路由
         Pages({
-          dirs: path.resolve(__dirname, './src/pages'),
+          dirs: resolve(__dirname, './src/pages'),
           extensions: ['vue'],
           exclude: ['**/components', '**/composables'],
         }),
